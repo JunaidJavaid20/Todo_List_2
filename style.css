@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container-fluid{
+    background-color: #acdad8;
+}
+.navbar{
+    background-color: transparent;
+}
+body {
+    background: #5f2c82;
+    background: -webkit-linear-gradient(to right, #49a09d, #5f2c82);
+    background: linear-gradient(to right, #49a09d, #5f2c82);
+    margin-top: 50px;
+}
+
+ul li {
+    list-style: none;
+
+
+}
+
+li {
+    display: flex;
+    width: 1000px;
+    margin: 20px 0px;
+
+}
+
+.same {
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px gray;
+}
+span{
+    font-size: 30px;
+    font-weight: 400;
+}
+
+
+.dBtn {
+    margin-left: 20px;
+    background-color: red;
+
+}
+
+.eBtn {
+    margin-left: 5px;
+    background-color: aqua;
+}
+
+.listName {
+    width: 100px;
+    height: auto;
+    padding: 10px;
+}
+
+.box {
+    border: 5px white solid;
+    /* border: 40px 0px 4px 0px;
+    border-color: white;
+    border-style: solid; */
+    height: 100%;
+    width: 75%;
+    padding: 50px 50px 0px 50px;
+    margin: 0px auto;
+    position: relative;
+
+}
+
+#inputvalue {
+    height: 40px;
+    width: 200px;
+    border-radius: 20px;
+    background: #7474BF;
+    padding: 20px;
+    font-size: 20px;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #348AC7, #7474BF);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #348AC7, #7474BF);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+#addBtn {
+    background: linear-gradient(to right, #348AC7, #7474BF);
+    border-radius: 10px;
+    height: 30px;
+    width: 60px;
+}
+
+h1 {
+    font-size: 60px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+img {
+    padding-left: 100px;
+    position: absolute;
+    bottom: 0;
+}

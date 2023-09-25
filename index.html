@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .name{
+            background-color: rebeccapurple;
+            width: 50%;
+            display: flex;
+            text-align: center;
+            border-bottom-right-radius: 80%;
+            border-bottom-left-radius: 34%;
+            justify-content: center;
+            color: white;
+        }
+        .container{
+            background-color: green;
+            justify-content: center;
+            text-align: center;
+            height: 170px;
+            padding-top: 6px;
+            margin-top: 10px;
+        }
+        .secContainer{
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        }
+        .header{
+            color: white;
+        }
+        #myInput{
+            border: 1px solid black;
+            width: 20rem;
+            height: 2.3rem;
+            font-size: 16px;
+            border-radius: 10px;
+        }
+        #btn{
+            font-size: 24px;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 110px;
+            background-color: rebeccapurple;
+            color: white;
+            border: 3px solid white;
+            margin-top: 10px;
+        }
+        hr{
+            width: 50%;
+            border: 1px solid white;
+        }
+        #myUL{
+            box-shadow: green 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+            margin-top: 10px;
+            padding-top: 0;       
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+        }
+        ul li {
+            cursor: pointer;
+            position: relative;
+            padding: 12px 8px 12px 40px;
+            list-style-type: none;
+            background: #eee;
+            font-size: 18px;
+            transition: 0.2s;
+            /* -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none; */
+        }
+        ul li:hover {
+            background: #ddd;
+        }
+        ul li.checked {
+            background: #888;
+            color: #fff;
+            text-decoration: line-through;
+        }
+        .close{
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 12px 16px 12px 16px;
+        }
+        .close:hover {
+            background-color: rebeccapurple;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div  class="name">
+        <h1>Muhammad Junaid Javaid</h1>
+    </div>
+    <div id="myDIV" class="container">
+        <h2 class="header">TODO LIST</h2>
+        <hr>
+        <input type="text" name="" id="myInput" placeholder="Title....">
+        <span><button onclick="newElement()" id="btn">Add list</button></span>
+    </div>
+    <ul id="myUL">
+        <li>Hit the gym</li>
+        <li class="checked">Pay bills</li>
+      </ul>
+
+    <script>
+
+        var myNodelist = document.getElementsByTagName("LI");
+        var i;
+        for (i = 0; i < myNodelist.length; i++) {
+        var span = document.createElement("SPAN");
+        var txt = document.createTextNode("\u00D7");
+        span.className = "close";
+        span.appendChild(txt);
+        myNodelist[i].appendChild(span);
+        }
+
+        var close = document.getElementsByClassName("close");
+        var i;
+        for (i = 0; i < close.length; i++) {
+        close[i].onclick = function() {
+            var div = this.parentElement;
+            div.style.display = "none";
+        }
+        }
+
+        var list = document.querySelector('ul');
+        list.addEventListener('click', function(ev) {
+        if (ev.target.tagName === 'LI') {
+            ev.target.classList.toggle('checked');
+        }
+        }, false);
+        function newElement() {
+        var li = document.createElement("li");
+        var inputValue = document.getElementById("myInput").value;
+        var t = document.createTextNode(inputValue);
+        li.appendChild(t);
+        if (inputValue === '') {
+            alert("Please Enter some text in input!");
+        } else {
+            document.getElementById("myUL").appendChild(li);
+        }
+        document.getElementById("myInput").value = "";
+
+        var span = document.createElement("SPAN");
+        var txt = document.createTextNode("\u00D7");
+        span.className = "close";
+        span.appendChild(txt);
+        li.appendChild(span);
+
+        for (i = 0; i < close.length; i++) {
+            close[i].onclick = function() {
+            var div = this.parentElement;
+            div.style.display = "none";
+            }
+        }
+        }
+    </script>
+
+
+
+    <!-- <script>
+        let text = document.getElementById("txt");
+        let btn = document.getElementById("btn");
+        let cntr = document.querySelector(".container");
+        let cntr1 = document.querySelector(".secContainer");
+
+        btn.addEventListener("click",()=>{
+            if(text.value == ""){
+                alert("Enter some Text");
+            }else{
+                let li = document.createElement("li");
+                li.innerHTML = text.value;
+                text.appendChild(li).className = "listValue";
+                let span = document.createElement("span");
+                li.appendChild(span);
+                span.appendChild(li.firstChild);
+                console.log(li);
+
+                let del = document.createElement("button");
+                del.innerHTML = "Delete";
+                li.appendChild(del).className = "dBtn";
+                del.className += "same";
+                del.addEventListener("click",()=>{
+                    li.innerText = "";
+                })
+                let edit = document.createElement("Edit");
+                edit.innerHTML = "Edit";
+                li.appendChild(edit).className = "eBtn";
+                edit.className += "same";
+                edit.addEventListener("click",()=>{
+                    li.innerHTML = "";
+                })
+            }
+            text.value = "";
+        })
+    </script> -->
+    </body>
+</html>
